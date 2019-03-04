@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="user.model.vo.User" %>
+<%
+	User loginUser2 = (User)session.getAttribute("loginUser");
+%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,42 +11,68 @@
 		<title>DIE DIE</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/diedie/assets/css/main.css" />
+		<style type="text/css">
+			.footerfont { border-bottom: dotted 1px; }
+			.footerfont:hover {
+			border-bottom-color: #f56a6a;
+			color: #f56a6a !important;
+			}
+		</style>
 	</head>
 	<body>
 	<!-- Sidebar -->
 		<div id="sidebar">
 			<div class="inner">
+			
+				<!-- Logo -->
+					<section class="alt">			
+						<div class="mini-posts">
+							<article>
+							<br>
+								<a href="/diedie/index.jsp" class="image"><img src="/diedie/images/logo2.png" alt="" /></a>
+							</article>
+						</div>
+					</section>
 
 				<!-- Menu -->
 					<nav id="menu">
 						<header class="major">
-							<h2>Menu</h2>
+							<h2>&nbsp;메뉴</h2>
 						</header>
 						<ul>
-							<li><a href="index.html">Homepage</a></li>
-							<li><a href="/diedie/view/login/login.html">Login</a></li>
-							<li><a href="/diedie/view/join/join.html">Join us</a></li>
-							<li><a href="/diedie/view/mypage/mypage.html">My Page</a></li>
+							<!-- 샘픔데이터. 나중에 지워야 함 -->
+							<li><a href="/diedie/generic.html">generic</a></li>
+							<li><a href="/diedie/elements.html">elememnts</a></li>
+
+
+							<li><a href="/diedie/index.jsp">&nbsp;홈</a></li>
+							<% if(loginUser2 == null){ %>
+							<li><a href="/diedie/view/login/login.jsp">&nbsp;로그인</a></li>
+							<li><a href="/diedie/view/join/join.jsp">&nbsp;회원가입</a></li>
+							<% }else{ %>
+							<li><a href="/diedie/view/mypage/mypage.jsp">&nbsp;마이페이지</a></li>
+							<% } %>
 							<li>
-								<span class="opener">Calorie</span>
+								<span class="opener">&nbsp;칼로리</span>
 								<ul>
-									<li><a href="#">Food Calorie</a></li>
-									<li><a href="#">Kinematic Calorie</a></li>
+									<li><a href="#">&nbsp;음식칼로리</a></li>
+									<li><a href="#">&nbsp;운동칼로리</a></li>
 								</ul>
 							</li>
-							<li><a href="/diedie/view/scheduler/scheduler.html">Scheduler</a></li>
-							<li><a href="/diedie/view/partner/partner.html">Partner</a></li>
+							<li><a href="/diedie/view/scheduler/scheduler.jsp">&nbsp;스케쥴러</a></li>
+							<li><a href="/diedie/view/partner/partner.jsp">&nbsp;파트너</a></li>
 							<li>
-								<span class="opener"><a href="/diedie/view/board/board.html">Board</a></span>
+								<span class="opener"><a href="/diedie/view/board/board.jsp">&nbsp;게시판</a></span>
 								<ul>
-									<li><a href="#">Lorem Dolor</a></li>
-									<li><a href="#">Ipsum Adipiscing</a></li>
-									<li><a href="#">Tempus Magna</a></li>
-									<li><a href="#">Feugiat Veroeros</a></li>
+									<li><a href="#">&nbsp;공지사항</a></li>
+									<li><a href="#">&nbsp;정보 공유</a></li>
+									<li><a href="#">&nbsp;갤러리</a></li>
+									<li><a href="#">&nbsp;질문 게시판</a></li>
+									<li><a href="#">&nbsp;자유 게시판</a></li>
 								</ul>
 							</li>
-							<li><a href="/diedie/view/fitness/fitness.html">Fitnes Place</a></li>
-							<li><a href="/diedie/view/service/service.html">Customer Service</a></li>
+							<li><a href="/diedie/view/fitness/fitness.jsp">&nbsp;생활체육시설</a></li>
+							<li><a href="/diedie/view/service/service.jsp">&nbsp;고객센터</a></li>
 							<!-- <li>
 								<span class="opener">Another Submenu</span>
 								<ul>
@@ -55,9 +85,20 @@
 						</ul>
 					</nav>
 
+
+				<!-- Section -->
+					<section>
+						<header class="major">
+							<h4>&nbsp;연락처</h4>
+						</header>
+						<ul class="contact">
+							<li class="fa-envelope-o">jjjein13@gmail.com</li>
+						</ul>
+					</section>
+					
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">&copy; 운동하고건강하조 All rights reserved.<br>Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<p class="copyright">Copyright ⓒ <font class="footerfont">운동하고건강하조</font> All rights reserved.</p>
 					</footer>
 
 			</div>

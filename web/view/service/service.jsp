@@ -5,6 +5,15 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>DIE DIE</title>
+		<style type="text/css">
+			#centerWindow {
+				position: absolute;
+				top: 50%;
+				left: 45%;
+				margin-top: -50px;
+				margin-left: -50px;
+			}
+		</style>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/diedie/assets/css/main.css" />
 	</head>
@@ -19,20 +28,25 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a class="logo"><strong>DIE DIE</strong></a>
+									<a class="logo"><strong>고객센터</strong></a>
 								</header>
 
 							<!-- Content -->
-								<section>
-									<span class="image main"><img src="/diedie/images/depositphotos_12437656-stock-photo-young-couple-jogging.jpg" alt="" /></span>
-								</section>
-									
+							
+							<div id="centerWindow">
+								<button style="width: 300px; height: 200px; margin: 10px">
+									<h2>FAQ</h2>
+								</button>
+								<button style="width: 300px; height: 200px;">
+									<h2>QNA</h2>
+								</button>
+							</div>
 						</div>
 					</div>
 
 
 				<!-- Sidebar -->
-					<%@ include file="view/common/sidebar.jsp" %>
+					<%@ include file="../common/sidebar.jsp" %>
 
 			</div>
 
