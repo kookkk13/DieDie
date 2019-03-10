@@ -28,7 +28,7 @@ public class LogoutServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 로그아웃 처리용 컨트롤러
-		HttpSession session = request.getSession(false);
+		HttpSession session = request.getSession(true);
 		if(session != null) {
 			session.invalidate();
 			response.sendRedirect("/diedie/index.jsp");

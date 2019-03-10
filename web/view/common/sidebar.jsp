@@ -2,8 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ page import="user.model.vo.User" %>
 <%
-    session.invalidate();
-	User loginUser2 = (User)session.getAttribute("loginUser");
+	User loginUser2;
+	try {
+		loginUser2 = (User)session.getAttribute("loginUser");
+	} catch(Exception e) {
+		loginUser2 = null;	
+	}
 %>
 <!DOCTYPE html>
 <html>

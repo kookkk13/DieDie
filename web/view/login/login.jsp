@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="user.model.vo.User, java.util.*"%>
 <%
-	User loginUser = (User)session.getAttribute("loginUser");
+	User loginUser;
+	try {
+		loginUser = (User)session.getAttribute("loginUser");
+	} catch(Exception e) {
+		loginUser = null;	
+	}
 %>
 <!DOCTYPE html>
 <html>

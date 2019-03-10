@@ -58,7 +58,7 @@ public class LoginServlet extends HttpServlet {
 		//4. 받은 결과를 가지고 뷰를 선택해서 내보냄
 		if(loginUser != null) {
 			//로그인 성공시
-			HttpSession session = request.getSession();
+			HttpSession session = request.getSession(true);
 			System.out.println("sessionID : " + session.getId());
 			session.setAttribute("loginUser", loginUser);
 			
