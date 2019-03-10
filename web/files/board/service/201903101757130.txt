@@ -1,0 +1,13 @@
+Project properties -> project facets -> runtimes tab 
+
+java build path -> source tab
+
+java build path -> libraries tab -> jre system library remove
+add library..
+
+tomcat double click -> modules tab -> web Modules check
+
+web.xml check
+
+META-INF - context.xml
+workDir ¼öÁ¤
